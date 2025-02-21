@@ -53,12 +53,16 @@ struct ArticleTitleFetcher {
     }
 }
 
+let articleURLOne = URL(string: "https://www.avanderlee.com/swiftui/how-to-develop-an-app-for-ios/")!
+let articleURLTwo = URL(string: "https://www.avanderlee.com/swift-testing/parameterized-tests-reducing-boilerplate-code/")!
+let articleURLThree = URL(string: "https://www.avanderlee.com/swift/result-builders/")!
+
 func fetchTitlesInOrder() async throws {
     let fetcher = ArticleTitleFetcher()
     
-    let titleOne = try await fetcher.fetchTitle(for: URL(string: "https://www.avanderlee.com/swiftui/how-to-develop-an-app-for-ios/")!)
-    let titleTwo = try await fetcher.fetchTitle(for: URL(string: "https://www.avanderlee.com/swift-testing/parameterized-tests-reducing-boilerplate-code/")!)
-    let titleThree = try await fetcher.fetchTitle(for: URL(string: "https://www.avanderlee.com/swift/result-builders/")!)
+    let titleOne = try await fetcher.fetchTitle(for: articleURLOne)
+    let titleTwo = try await fetcher.fetchTitle(for: articleURLTwo)
+    let titleThree = try await fetcher.fetchTitle(for: articleURLThree)
     
     print("Title 3: \(titleThree)")
     print("Title 2: \(titleTwo)")
@@ -69,13 +73,13 @@ func fetchTitlesInParallel() async throws {
     let fetcher = ArticleTitleFetcher()
 
     print("Defining title one")
-    async let titleOne = try await fetcher.fetchTitle(for: URL(string: "https://www.avanderlee.com/swiftui/how-to-develop-an-app-for-ios/")!)
+    async let titleOne = try await fetcher.fetchTitle(for: articleURLOne)
     
     try await Task.sleep(nanoseconds: 1_000_000_000)
     
     print("Defining title two and three")
-    async let titleTwo = try await fetcher.fetchTitle(for: URL(string: "https://www.avanderlee.com/swift-testing/parameterized-tests-reducing-boilerplate-code/")!)
-    async let titleThree = try await fetcher.fetchTitle(for: URL(string: "https://www.avanderlee.com/swift/result-builders/")!)
+    async let titleTwo = try await fetcher.fetchTitle(for: articleURLTwo)
+    async let titleThree = try await fetcher.fetchTitle(for: articleURLThree)
 
     let titles = try await [titleOne, titleTwo, titleThree]
     print(titles.joined(separator: ", "))

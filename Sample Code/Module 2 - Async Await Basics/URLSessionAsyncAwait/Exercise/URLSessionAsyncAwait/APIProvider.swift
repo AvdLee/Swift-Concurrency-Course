@@ -94,38 +94,3 @@ extension APIProvider {
         }.resume()
     }
 }
-
-extension APIProvider {
-    func performPOSTURLRequest() async throws(NetworkingError) -> PostData {
-        do {
-            /// Configure the URL for our request.
-            let url = URL(string: "https://httpbin.org/post")!
-            
-            /// Create a URLRequest for the POST request.
-            var request = URLRequest(url: url)
-            
-            /// Configure the HTTP method.
-            request.httpMethod = "POST"
-            
-            /// Configure the proper content-type value to JSON.
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            
-            /// Define the struct of data and encode it to data.
-            let postData = PostData(name: "Antoine van der Lee", age: 33)
-            let jsonData = try JSONEncoder().encode(postData)
-            
-            /// Pass in the data as the HTTP body.
-            request.httpBody = jsonData
-        } catch let error as DecodingError {
-            throw .decodingFailed(innerError: error)
-        } catch let error as EncodingError {
-            throw .encodingFailed(innerError: error)
-        } catch let error as URLError {
-            throw .requestFailed(innerError: error)
-        } catch let error as NetworkingError {
-            throw error
-        } catch {
-            throw .otherError(innerError: error)
-        }
-    }
-}
