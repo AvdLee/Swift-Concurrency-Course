@@ -11,7 +11,7 @@ import SwiftUI
 struct ConcurrencyTasksApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContainerTabView()
         }
     }
 }

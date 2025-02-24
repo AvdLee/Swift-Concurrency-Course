@@ -85,7 +85,24 @@ func fetchTitlesInParallel() async throws {
     print(titles.joined(separator: ", "))
 }
 
-try await fetchTitlesInParallel()
+func fetchTitlesInParallelAwaitingArray() async throws {
+    let fetcher = ArticleTitleFetcher()
+
+    print("Defining title one")
+    async let titleOne = fetcher.fetchTitle(for: articleURLOne)
+    
+    try await Task.sleep(nanoseconds: 1_000_000_000)
+    
+    print("Defining title two and three")
+    async let titleTwo = fetcher.fetchTitle(for: articleURLTwo)
+    async let titleThree = fetcher.fetchTitle(for: articleURLThree)
+
+    print("Awaiting results in array")
+    let titles = try await [titleOne, titleTwo, titleThree]
+    print(titles.joined(separator: ", "))
+}
+
+try await fetchTitlesInParallelAwaitingArray()
 
 // Commented since it's demonstrating broken functionality.
 //@Observable

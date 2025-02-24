@@ -23,12 +23,6 @@ func someSynchronousMethod() {
     }
 }
 
-
-
-
-
-
-
 func someAsynchronousMethod() async {
     
 }
