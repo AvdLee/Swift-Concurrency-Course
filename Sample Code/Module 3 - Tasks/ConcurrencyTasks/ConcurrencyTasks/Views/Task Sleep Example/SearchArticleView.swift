@@ -7,30 +7,42 @@
 
 import SwiftUI
 
+/// Example 1: Using manual search cancellation, not using SwiftUI's `task` modifier:
 struct SearchArticleView: View {
     @State private var searchQuery = ""
+    @State private var articleSearcher = ArticleSearcher()
 
-    private var articleSearcher = ArticleSearcher()
-    
     var body: some View {
         NavigationStack {
             List {
-                Section {
-                    ForEach(articleSearcher.searchResults, id: \.self) { title in
-                        Text(title)
-                    }
-                } header: {
-                    if searchQuery.isEmpty {
-                        Text("All articles")
-                    } else {
-                        Text("Search results for: \(searchQuery)")
-                    }
+                ForEach(articleSearcher.searchResults, id: \.self) { title in
+                    Text(title)
                 }
-            }.navigationTitle("Search Sleep Example")
-                .navigationBarTitleDisplayMode(.inline)
-        }.searchable(text: $searchQuery)
-            .onChange(of: searchQuery, { oldValue, newValue in
-                articleSearcher.search(newValue)
-            })
+            }
+        }
+        .searchable(text: $searchQuery)
+        .onChange(of: searchQuery) { oldValue, newValue in
+            articleSearcher.search(newValue)
+        }
+    }
+}
+
+/// Example 2: Using manual search cancellation, not using SwiftUI's `task` modifier:
+struct SearchArticleTaskModifierView: View {
+    @State private var searchQuery = ""
+    @State private var articleSearcher = ArticleSearcher()
+
+    var body: some View {
+        NavigationStack {
+            List {
+                ForEach(articleSearcher.searchResults, id: \.self) { title in
+                    Text(title)
+                }
+            }
+        }
+        .searchable(text: $searchQuery)
+        .task(id: searchQuery, priority: .userInitiated) {
+            await articleSearcher.search(searchQuery)
+        }
     }
 }
