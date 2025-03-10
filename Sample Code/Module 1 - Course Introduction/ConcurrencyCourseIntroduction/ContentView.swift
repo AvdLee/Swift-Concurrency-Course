@@ -16,6 +16,10 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
+        .onAppear {
+            DataRaceExample.dataRaceExample()
+            DataRaceExample.dataRaceLockingExample()
+        }
     }
 }
 
