@@ -20,7 +20,7 @@ struct ContainerTabView: View {
                     Label("Home", systemImage: "photo.artframe")
                 }
 
-            SearchArticleView()
+            SearchArticleTaskModifierView()
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
                 }
