@@ -9,16 +9,38 @@ import SwiftUI
 
 struct ImageContentView: View {
     @State private var image: UIImage?
+    @State private var taskGroupImages: [UIImage] = []
     
     let imageFetcher = ImageFetcher()
-    
+    let taskGroupsDemonstrator = TaskGroupsDemonstrator()
+
     var body: some View {
         NavigationStack {
-            VStack {
-                if let image {
-                    Image(uiImage: image)
-                } else {
-                    Text("Loading...")
+            List {
+                /// Single image loading.
+                Section {
+                    Group {
+                        if let image {
+                            Image(uiImage: image)
+                        } else {
+                            Text("Loading...")
+                        }
+                    }
+                } header: {
+                    Text("Single image")
+                }
+                
+                /// Multiple images loading using Task Groups.
+                Section {
+                    if !taskGroupImages.isEmpty {
+                        ForEach(taskGroupImages, id: \.self) { image in
+                            Image(uiImage: image)
+                        }
+                    } else {
+                        Text("Loading...")
+                    }
+                } header: {
+                    Text("Multiple images using Task Groups")
                 }
             }.navigationTitle("Image Fetching Example")
                 .navigationBarTitleDisplayMode(.inline)
@@ -29,6 +51,13 @@ struct ImageContentView: View {
                 print("Image loading completed")
             } catch {
                 print("Image loading failed: \(error)")
+            }
+        }
+        .task {
+            do {
+                taskGroupImages = try await taskGroupsDemonstrator.fetchImages()
+            } catch {
+                print("Task group image loading failed: \(error)")
             }
         }
     }
