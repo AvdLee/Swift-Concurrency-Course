@@ -12,6 +12,7 @@ struct ContainerTabView: View {
     let cancelTaskDemonstrator = CancelTaskDemonstrator()
     let errorHandlingDemonstrator = ErrorHandlingDemonstrator()
     let detachedTasksDemonstrator = DetachedTasksDemonstrator()
+    let threadingDemonstrator = ThreadingDemonstrator()
     
     var body: some View {
         TabView {
@@ -33,6 +34,8 @@ struct ContainerTabView: View {
         }.task {
             await detachedTasksDemonstrator.detachedTaskPrintExample()
             await detachedTasksDemonstrator.detachedTaskCancelationExample()
+        }.task {
+            await threadingDemonstrator.demonstrate()
         }
     }
 }
