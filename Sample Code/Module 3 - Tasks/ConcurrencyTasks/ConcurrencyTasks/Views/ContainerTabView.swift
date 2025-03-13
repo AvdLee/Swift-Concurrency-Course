@@ -9,13 +9,13 @@ import SwiftUI
 
 struct ContainerTabView: View {
     
-    let cancelTaskDemonstrator = CancelTaskDemonstrator()
-    let errorHandlingDemonstrator = ErrorHandlingDemonstrator()
-    let detachedTasksDemonstrator = DetachedTasksDemonstrator()
-    let threadingDemonstrator = ThreadingDemonstrator()
-    
     var body: some View {
         TabView {
+            DemonstratorsTabView()
+                .tabItem {
+                    Label("Demonstrators", systemImage: "gearshape")
+                }
+            
             ImageContentView()
                 .tabItem {
                     Label("Home", systemImage: "photo.artframe")
@@ -25,17 +25,6 @@ struct ContainerTabView: View {
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
                 }
-        }.task {
-            await cancelTaskDemonstrator.parentTaskCancelationExample()
-        }.task {
-            await errorHandlingDemonstrator.throwingTaskExample()
-            await errorHandlingDemonstrator.nonthrowingTaskExample()
-            await errorHandlingDemonstrator.errorHandlingInTaskBodyExample()
-        }.task {
-            await detachedTasksDemonstrator.detachedTaskPrintExample()
-            await detachedTasksDemonstrator.detachedTaskCancelationExample()
-        }.task {
-            await threadingDemonstrator.demonstrate()
         }
     }
 }

@@ -71,7 +71,7 @@ struct ThreadingDemonstrator {
 //        print("Background task started on thread: \(Thread.current)")
     }
     
-    func fetchData(completion: @escaping (Result<String, Error>) -> Void) {
+    func fetchData(completion: @escaping @Sendable (Result<String, Error>) -> Void) {
         let seconds = 1.0 // Simulating network delay
         DispatchQueue.global().asyncAfter(deadline: .now() + seconds) {
             completion(.success("Data"))
@@ -104,8 +104,6 @@ struct ThreadingDemonstrator {
             }
         }
     }
-    
-    
     
     func fetchData() async throws -> String {
         try await Task.sleep(for: .seconds(1)) // Simulating network delay

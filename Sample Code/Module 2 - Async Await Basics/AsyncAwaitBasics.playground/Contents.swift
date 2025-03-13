@@ -31,7 +31,7 @@ Task {
     let images = try await imageFetcher.fetchImages()
 }
 //: Basic `async let` example:
-func fetchData(_ id: Int) async -> String {
+func fetchData(_ id: Int) -> String {
     return "Data \(id)"
 }
 

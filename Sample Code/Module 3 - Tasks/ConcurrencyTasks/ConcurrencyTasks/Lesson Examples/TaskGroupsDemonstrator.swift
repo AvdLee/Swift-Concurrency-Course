@@ -29,6 +29,7 @@ struct TaskGroupsDemonstrator {
     func fetchImagesWithFailure() async throws -> [UIImage] {
         try await withThrowingTaskGroup(of: UIImage.self, returning: [UIImage].self) { taskGroup in
             let photoURLs = try await listPhotoURLs(inGallery: "Amsterdam Holiday")
+            
             for photoURL in photoURLs {
                 let didAddTask = taskGroup.addTaskUnlessCancelled {
                     try await downloadPhoto(url: photoURL)
