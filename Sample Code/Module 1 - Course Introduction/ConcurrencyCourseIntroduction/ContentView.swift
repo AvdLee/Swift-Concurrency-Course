@@ -19,6 +19,7 @@ struct ContentView: View {
         .onAppear {
             DataRaceExample.dataRaceExample()
             DataRaceExample.dataRaceLockingExample()
+            StructuredConcurrencyFetcher().synchronousMethod()
         }
     }
 }

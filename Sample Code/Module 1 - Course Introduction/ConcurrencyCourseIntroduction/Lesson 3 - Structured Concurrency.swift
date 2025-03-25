@@ -44,19 +44,19 @@ struct ClosureFetcher {
 }
 
 struct StructuredConcurrencyFetcher {
-    func fetchData() async throws -> String {
-        
+    private func fetchData(index: Int) async throws -> String {
+        print("Fetching data for index \(index)")
         try Task.checkCancellation()
         
         /// Perform networking request...
         sleep(1) // Simulating network delay
-        return "Data"
+        return "Data \(index)"
     }
 
-    func loadData() async throws {
-        let data1 = try await fetchData()
-        let data2 = try await fetchData()
-        let data3 = try await fetchData()
+    private func loadData() async throws {
+        let data1 = try await fetchData(index: 1)
+        let data2 = try await fetchData(index: 2)
+        let data3 = try await fetchData(index: 3)
 
         print("Finished loading: \(data1), \(data2), \(data3)")
     }
@@ -64,12 +64,12 @@ struct StructuredConcurrencyFetcher {
     func synchronousMethod() {
         /// Transitioning to a concurrency context using `Task`:
         let parentTask = Task {
-            let childTask1 = try await fetchData()
-            let childTask2 = try await fetchData()
-            let childTask3 = try await fetchData()
+            async let childTask1 = fetchData(index: 1)
+            async let childTask2 = fetchData(index: 2)
+            async let childTask3 = fetchData(index: 3)
             
             let isCancelled = Task.isCancelled
-            print("Finished loading (cancelled: \(isCancelled))")
+            print("Finished loading: \(try await childTask1), \(try await childTask2), \(try await childTask3) (cancelled: \(isCancelled))")
         }
         parentTask.cancel()
     }

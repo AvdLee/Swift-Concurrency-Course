@@ -10,7 +10,7 @@ import SwiftUI
 
 struct DemonstratorsTabView: View {
     let dataRaceDemonstrator = DataRaceDemonstrator()
-
+    let contactsStoreDemonstrator = ContactsStoreDemonstrator()
     var body: some View {
         Form {
             Section(header: Text("Tap the button and look below for the print statements to learn")) {
@@ -29,6 +29,9 @@ struct DemonstratorsTabView: View {
                     Task {
                         await dataRaceDemonstrator.demonstrateRaceCondition()
                     }
+                }
+                Button("Demonstrate Sendable Functions") {
+                    contactsStoreDemonstrator.demonstrate()
                 }
             }
         }

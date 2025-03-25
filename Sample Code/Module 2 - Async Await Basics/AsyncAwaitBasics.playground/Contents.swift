@@ -154,9 +154,9 @@ try await fetchTitlesInParallelAwaitingArray()
 //: Define a fetcher who uses a `URLSession` data request to get the <title></title> contents.
 let fetcher = ArticleTitleFetcher()
 //: Fetch the webpage titles for 3 different webpages:
-async let titleOne = try await fetcher.fetchTitle(for: URL(string: "https://www.avanderlee.com/swiftui/how-to-develop-an-app-for-ios/")!)
-async let titleTwo = try await fetcher.fetchTitle(for: URL(string: "https://www.avanderlee.com/swift-testing/parameterized-tests-reducing-boilerplate-code/")!)
-async let titleThree = try await fetcher.fetchTitle(for: URL(string: "https://www.avanderlee.com/swift/result-builders/")!)
+async let titleOne = try await fetcher.fetchTitle(for: articleURLOne)
+async let titleTwo = try await fetcher.fetchTitle(for: articleURLTwo)
+async let titleThree = try await fetcher.fetchTitle(for: articleURLThree)
 //: Wait for all the requests to finish by using an array:
 let titles = try await [titleOne, titleTwo, titleThree]
 /*:
