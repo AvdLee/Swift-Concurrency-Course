@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     private let introductionToActorsDemonstrator = IntroductionToActorsDemonstrator()
     private let isolatedKeywordDemonstrator = IsolatedKeywordDemonstrator()
+    private let actorReentrancyDemonstrator = ActorReentrancyDemonstrator()
     
     var body: some View {
         VStack {
@@ -23,7 +24,10 @@ struct ContentView: View {
             await introductionToActorsDemonstrator.demonstrate()
         }
         .task {
-            await isolatedKeywordDemonstrator.demonstrate()
+            isolatedKeywordDemonstrator.demonstrate()
+        }
+        .task {
+            await actorReentrancyDemonstrator.demonstrate()
         }
     }
 }

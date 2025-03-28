@@ -87,6 +87,51 @@ struct IsolatedKeywordDemonstrator {
         /// Demonstration 4: Nonisolated access
         let bankAccount = BankAccount(initialDeposit: 300)
         print(bankAccount.details)
+        
+        Task { @MainActor in
+            let names = ["Antoine", "Maaike", "Sep", "Jip"]
+            
+            /// Enabling this would show a compiler error:
+            /// Sending main actor-isolated value of type '(String) async -> String' with later accesses to nonisolated context risks causing data races
+//            let lowercaseNames = await names.withoutIsolationSequentialMap { name in
+//                await lowercaseWithSleep(input: name)
+//            }
+            let lowercaseNames = await names.withIsolationSequentialMap { name in
+                await lowercaseWithSleep(input: name)
+            }
+            print(lowercaseNames)
+        }
+    }
+    
+    func lowercaseWithSleep(input: String) async -> String {
+        try? await Task.sleep(for: .seconds(1))
+        return input.lowercased()
+    }
+}
+
+
+extension Collection where Element: Sendable {
+    /// Only works for non-isolated domains.
+    func withoutIsolationSequentialMap<Result: Sendable>(
+        transform: (Element) async -> Result
+    ) async -> [Result] {
+        var results: [Result] = []
+        for element in self {
+            results.append(await transform(element))
+        }
+        return results
+    }
+    
+    /// Works with any isolation domain as it inherits isolation via the `#isolation` macro.
+    func withIsolationSequentialMap<Result: Sendable>(
+        isolation: isolated (any Actor)? = #isolation,
+        transform: (Element) async -> Result
+    ) async -> [Result] {
+        var results: [Result] = []
+        for element in self {
+            results.append(await transform(element))
+        }
+        return results
     }
 }
 
