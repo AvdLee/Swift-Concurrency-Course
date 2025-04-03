@@ -1,4 +1,12 @@
-# Next
+## April 2025
+### 30 new lessons
+Added 30 lessons covering:
+
+- Tasks
+- Sendable
+- Actors
+
+## March 2025
 
 ### Course changes
 - Assessments can now be retried up to five times
