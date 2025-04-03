@@ -11,6 +11,7 @@ struct ContentView: View {
     private let introductionToActorsDemonstrator = IntroductionToActorsDemonstrator()
     private let isolatedKeywordDemonstrator = IsolatedKeywordDemonstrator()
     private let actorReentrancyDemonstrator = ActorReentrancyDemonstrator()
+    private let customActorExecutorDemonstrator = CustomActorExecutorDemonstrator()
     
     var body: some View {
         VStack {
@@ -28,6 +29,9 @@ struct ContentView: View {
         }
         .task {
             await actorReentrancyDemonstrator.demonstrate()
+        }
+        .task {
+            await customActorExecutorDemonstrator.demonstrate()
         }
     }
 }
