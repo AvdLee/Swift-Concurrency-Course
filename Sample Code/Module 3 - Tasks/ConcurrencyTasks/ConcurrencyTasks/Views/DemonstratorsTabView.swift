@@ -12,6 +12,7 @@ struct DemonstratorsTabView: View {
     let errorHandlingDemonstrator = ErrorHandlingDemonstrator()
     let detachedTasksDemonstrator = DetachedTasksDemonstrator()
     let threadingDemonstrator = ThreadingDemonstrator()
+    let newThreadingDemonstrator = NewThreadingDemonstrator()
     let taskPriorityDemonstrator = TaskPriorityDemonstrator()
 
     @State private var consoleLogsCapturer = ConsoleLogsCapturer()
@@ -47,6 +48,13 @@ struct DemonstratorsTabView: View {
                     consoleLogsCapturer.clearLogs()
                     Task {
                         await threadingDemonstrator.demonstrate()
+                    }
+                }
+                
+                Button("New Threading Demonstration") {
+                    consoleLogsCapturer.clearLogs()
+                    Task {
+                        await newThreadingDemonstrator.demonstrate()
                     }
                 }
 
