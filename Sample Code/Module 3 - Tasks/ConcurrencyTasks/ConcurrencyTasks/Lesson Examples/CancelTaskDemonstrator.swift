@@ -59,13 +59,12 @@ extension CancelTaskDemonstrator {
 
             async let childTask1 = someWork(id: 1)
             async let childTask2 = someWork(id: 2)
-
             let finishedTaskIDs = try await [childTask1, childTask2]
             print(finishedTaskIDs)
         }
 
-        /// Cancel parent task after a short delay of 0.5 seconds.
-        try? await Task.sleep(nanoseconds: 500_000_000)
+        /// Cancel parent task after a short delay.
+        try? await Task.sleep(for: .milliseconds(200))
         
         /// This cancels both childTask1 and childTask2:
         handle.cancel()
@@ -81,8 +80,8 @@ extension CancelTaskDemonstrator {
             try Task.checkCancellation()
             print("Child task \(id): Step \(i)")
             
-            /// Sleep for 0.4 seconds.
-            try await Task.sleep(nanoseconds: 400_000_000)
+            /// Add a delay so we're being cancelled before running into the next loop.
+            try await Task.sleep(for: .milliseconds(400))
         }
         
         return id
