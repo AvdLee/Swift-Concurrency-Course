@@ -18,13 +18,13 @@ import Foundation
  */
 struct ThreadingDemonstrator {
     private func firstTask() async throws {
-//        print("Task 1 started on thread: \(Thread.current)")
+        print("Task 1 started on thread: \(Thread.currentThread)")
         try await Task.sleep(for: .seconds(2))
-//        print("Task 1 resumed on thread: \(Thread.current)")
+        print("Task 1 resumed on thread: \(Thread.currentThread)")
     }
 
     private func secondTask() async {
-//        print("Task 2 started on thread: \(Thread.current)")
+        print("Task 2 started on thread: \(Thread.currentThread)")
     }
 
     func demonstrate() async {
@@ -52,23 +52,26 @@ struct ThreadingDemonstrator {
     private func updateUI() {
         /// Task inherits execution context from the `updateUI()` method.
         /// Since it's attribute with `@MainActor`, this task will run on the main thread.
-        Task {
-//            print("Starting on the main thread: \(Thread.current)")
-            
+        Task { @MainActor in
+            print("Starting on the main thread: \(Thread.currentThread)")
+            // Starting on the main thread: <_NSMainThread: 0x600001558000>{number = 1, name = main}
+
             /// Suspension point:
             /// - Main thread will be released for other work
             /// - This task will resume later when the background task completes.
             await someBackgroundTask()
             
             /// Returning on the main thread.
-//            print("Resuming on the main thread: \(Thread.current)")
+            print("Resuming on the main thread: \(Thread.currentThread)")
+            // Resuming on the main thread: <_NSMainThread: 0x600001558000>{number = 1, name = main}
         }
     }
 
     /// There's no `@MainActor` attribute here, so this method will run on any of the available
     /// background threads.
     private func someBackgroundTask() async {
-//        print("Background task started on thread: \(Thread.current)")
+        print("Background task started on thread: \(Thread.currentThread)")
+        // Background task started on thread: <NSThread: 0x600001553080>{number = 5, name = (null)}
     }
     
     func fetchData(completion: @escaping @Sendable (Result<String, Error>) -> Void) {
@@ -116,5 +119,14 @@ struct ThreadingDemonstrator {
         let data3 = try await fetchData()
         
         print("Finished loading: \(data1), \(data2), \(data3)")
+    }
+}
+
+extension Thread {
+    /// This is a workaround for compiler error:
+    /// Class property 'current' is unavailable from asynchronous contexts; Thread.current cannot be used from async contexts.
+    /// See: https://github.com/swiftlang/swift-corelibs-foundation/issues/5139
+    public static var currentThread: Thread {
+        return Thread.current
     }
 }
