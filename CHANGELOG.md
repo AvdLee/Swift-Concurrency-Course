@@ -1,11 +1,16 @@
 ## May 2025
-### Two new modules: Async Sequences & Memory Management
-Added 7 lessons covering Async Sequences, Async Streams, and Memory Management.
+### 13 new lessons across 3 modules
+
+- AsyncStream & AsyncSequence: Handling Asynchronous Data Streams
+- Threading: How It All Connects
+- Memory Management in Swift Concurrency: Avoiding Common Pitfalls
+
 
 ### Other changes
 **Module 3**
+
 - Updated sample code to print the current thread via a convenience method.
-- Added a new threading demonstrator that works with an upcoming feature flag for demonstrating new threading behavior in Swift 6.2
+- Added a new threading demonstrator that works with an upcoming feature flag for demonstrating new threading behavior in Swift 6.2. Also, moved this threading demonstrator to the threading module sample code.
 
 
 ## April 2025

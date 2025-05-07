@@ -10,7 +10,8 @@ import SwiftUI
 struct DemonstratorsTabView: View {
     let threadingDemonstrator = ThreadingDemonstrator()
     let newThreadingDemonstrator = NewThreadingDemonstrator()
-
+    let actorReentrancyDemonstrator = ActorReentrancyDemonstrator()
+    
     @State private var consoleLogsCapturer = ConsoleLogsCapturer()
 
     var body: some View {
@@ -28,6 +29,10 @@ struct DemonstratorsTabView: View {
                     Task {
                         await newThreadingDemonstrator.demonstrate()
                     }
+                }
+                Button("Actor Reentrancy Demonstration") {
+                    consoleLogsCapturer.clearLogs()
+                    actorReentrancyDemonstrator.demonstrate()
                 }
             }
             Section("Console Output") {
