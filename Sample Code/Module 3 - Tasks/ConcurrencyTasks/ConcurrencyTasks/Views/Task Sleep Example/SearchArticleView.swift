@@ -27,7 +27,7 @@ struct SearchArticleView: View {
     }
 }
 
-/// Example 2: Using manual search cancellation, not using SwiftUI's `task` modifier:
+/// Example 2: Using automatic search cancellation by using SwiftUI's `task` modifier:
 struct SearchArticleTaskModifierView: View {
     @State private var searchQuery = ""
     @State private var articleSearcher = ArticleSearcher()

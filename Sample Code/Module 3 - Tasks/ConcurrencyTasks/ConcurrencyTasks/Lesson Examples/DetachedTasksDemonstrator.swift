@@ -21,7 +21,7 @@ struct DetachedTasksDemonstrator {
         // Operation two
     }
     
-    func detachedTaskCancelationExample() async {
+    func detachedTaskCancellationExample() async {
         let outerTask = Task {
             /// This one will cancel.
             await longRunningAsyncOperation()

@@ -21,7 +21,7 @@ struct DemonstratorsTabView: View {
                 Button("Cancel Task Demonstration") {
                     consoleLogsCapturer.clearLogs()
                     Task {
-                        await cancelTaskDemonstrator.parentTaskCancelationExample()
+                        await cancelTaskDemonstrator.parentTaskCancellationExample()
                     }
                 }
 
@@ -38,7 +38,7 @@ struct DemonstratorsTabView: View {
                     consoleLogsCapturer.clearLogs()
                     Task {
                         await detachedTasksDemonstrator.detachedTaskPrintExample()
-                        await detachedTasksDemonstrator.detachedTaskCancelationExample()
+                        await detachedTasksDemonstrator.detachedTaskCancellationExample()
                     }
                 }
 

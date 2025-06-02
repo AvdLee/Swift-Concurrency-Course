@@ -53,7 +53,7 @@ struct CancelTaskDemonstrator {
 
 extension CancelTaskDemonstrator {
     /// Demonstrates how a parent task cancels inner tasks upon cancellation.
-    func parentTaskCancelationExample() async {
+    func parentTaskCancellationExample() async {
         let handle = Task {
             print("Parent task started")
 
