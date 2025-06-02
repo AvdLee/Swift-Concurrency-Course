@@ -28,6 +28,10 @@ struct ActorReentrancyDemonstrator {
     }
 }
 
+actor Example: NSObject {
+    
+}
+
 private actor BankAccount {
     var balance: Double
     let activityLogger = BankAccountActivityLogger()
