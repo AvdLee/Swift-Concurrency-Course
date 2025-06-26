@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		84FAAE412E0C284C0024F57D /* ConcurrencyExtras in Frameworks */ = {isa = PBXBuildFile; productRef = 84FAAE402E0C284C0024F57D /* ConcurrencyExtras */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		847EA12B2E0BDECF005B59CF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -46,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84FAAE412E0C284C0024F57D /* ConcurrencyExtras in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +118,7 @@
 			);
 			name = TestingConcurrentCodeTests;
 			packageProductDependencies = (
+				84FAAE402E0C284C0024F57D /* ConcurrencyExtras */,
 			);
 			productName = TestingConcurrentCodeTests;
 			productReference = 847EA12A2E0BDECF005B59CF /* TestingConcurrentCodeTests.xctest */;
@@ -146,6 +152,9 @@
 			);
 			mainGroup = 847EA1102E0BDECD005B59CF;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				84FAAE3F2E0C284C0024F57D /* XCRemoteSwiftPackageReference "swift-concurrency-extras" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 847EA11A2E0BDECD005B59CF /* Products */;
 			projectDirPath = "";
@@ -469,6 +478,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		84FAAE3F2E0C284C0024F57D /* XCRemoteSwiftPackageReference "swift-concurrency-extras" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-concurrency-extras.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		84FAAE402E0C284C0024F57D /* ConcurrencyExtras */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84FAAE3F2E0C284C0024F57D /* XCRemoteSwiftPackageReference "swift-concurrency-extras" */;
+			productName = ConcurrencyExtras;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 847EA1112E0BDECD005B59CF /* Project object */;
 }

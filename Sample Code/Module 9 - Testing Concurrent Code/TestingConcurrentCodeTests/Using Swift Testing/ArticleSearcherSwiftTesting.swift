@@ -40,7 +40,6 @@ final class ArticleSearcherSwiftTesting {
     }
     
     @Test
-    @MainActor
     func testWithSearchQuery() async {
         let articleSearcher = ArticleSearcher()
         await articleSearcher.search("three")
@@ -48,7 +47,6 @@ final class ArticleSearcherSwiftTesting {
     }
     
     @Test
-    @MainActor
     func testWithSearchQueryAndObservation() async {
         let articleSearcher = ArticleSearcher()
         
@@ -78,6 +76,7 @@ struct ArticleSearcherDatabaseTrait: SuiteTrait, TestTrait, TestScoping {
     @MainActor
     func provideScope(for test: Test, testCase: Test.Case?, performing function: () async throws -> Void) async throws {
         print("Running for test \(test.name)")
+
         let articleSearcher = ArticleSearcher()
         try await ArticleSearcherSwiftTesting.Environment.$articleSearcher.withValue(articleSearcher) {
             await articleSearcher.prepareDatabase()

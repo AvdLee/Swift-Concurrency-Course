@@ -21,6 +21,7 @@ final class ArticleSearcher {
     var searchResults: [String] = ArticleSearcher.articleTitlesDatabase
     
     private var currentSearchTask: Task<Void, Never>?
+    private var isSearching = false
     
     /// Using manual cancellation management.
     func searchWithSearchTask(_ query: String) {
@@ -29,6 +30,8 @@ final class ArticleSearcher {
         
         currentSearchTask = Task {
             do {
+                isSearching = true
+                
                 /// Sleep for 0.5 seconds to wait for a pause in typing before executing the search.
                 try await Task.sleep(for: .milliseconds(500))
                 
@@ -37,6 +40,7 @@ final class ArticleSearcher {
                 /// A simplified static result and search implementation.
                 searchResults = Self.articleTitlesDatabase
                     .filter { $0.lowercased().contains(query.lowercased()) }
+                isSearching = false
             } catch {
                 print("Search was cancelled!")
             }
