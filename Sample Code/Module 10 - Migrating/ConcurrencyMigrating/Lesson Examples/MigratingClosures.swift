@@ -20,13 +20,13 @@ struct ImageFetcher {
     }
     
     func fetchImage(urlRequest: URLRequest, completion: @escaping @Sendable (Result<PlatformImage, Swift.Error>) -> Void) {
-        URLSession.shared.dataTask(with: urlRequest) { imageData, _, error in
+        let task = URLSession.shared.dataTask(with: urlRequest) { imageData, _, error in
             do {
-                if let error {
+                if let error = error {
                     throw error
                 }
                 
-                guard let imageData, let image = PlatformImage(data: imageData) else {
+                guard let imageData = imageData, let image = PlatformImage(data: imageData) else {
                     throw Error.imageConversionFailed
                 }
                 
@@ -35,8 +35,8 @@ struct ImageFetcher {
                 completion(.failure(error))
             }
         }
+        task.resume()
     }
-    
 }
 
 struct MigrationDemonstrator {
