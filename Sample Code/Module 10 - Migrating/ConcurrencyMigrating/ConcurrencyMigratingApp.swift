@@ -11,7 +11,14 @@ import SwiftUI
 struct ConcurrencyMigratingApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                Tab("Search with Combine", systemImage: "magnifyingglass") {
+                    Concurrency_SearchArticleView()
+                }
+                Tab("Search with Concurrency", systemImage: "sparkle.magnifyingglass") {
+                    Concurrency_SearchArticleView()
+                }
+            }
         }
     }
 }

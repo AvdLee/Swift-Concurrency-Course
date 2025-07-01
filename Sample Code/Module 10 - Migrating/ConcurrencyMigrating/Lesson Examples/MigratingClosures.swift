@@ -19,6 +19,7 @@ struct ImageFetcher {
         case imageConversionFailed
     }
     
+    /// Right-click this method to use Xcode's refactoring options.
     func fetchImage(urlRequest: URLRequest, completion: @escaping @Sendable (Result<PlatformImage, Swift.Error>) -> Void) {
         let task = URLSession.shared.dataTask(with: urlRequest) { imageData, _, error in
             do {
@@ -50,5 +51,22 @@ struct MigrationDemonstrator {
             print(result)
         }
         
+    }
+}
+
+/// This instance shows what a migrated version of the `ImageFetcher` could look like.
+/// Unfortunately, Xcode's refactoring options don't end up with the method you'll see inside this instance.
+/// Therefore, manual migration is often required.
+struct ImageFetcherMigrated {
+    enum Error: Swift.Error {
+        case imageConversionFailed
+    }
+    
+    func fetchImage(urlRequest: URLRequest) async throws -> PlatformImage {
+        let (data, _) = try await URLSession.shared.data(for: urlRequest)
+        guard let image = PlatformImage(data: data) else {
+            throw Error.imageConversionFailed
+        }
+        return image
     }
 }
