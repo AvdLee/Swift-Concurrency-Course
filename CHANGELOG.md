@@ -1,3 +1,8 @@
+## July 2025
+### Tasks
+- Updated `ConcurrencyTasks.xcodeproj` for Xcode 26
+- 
+
 ## June 2025
 No new modules yet due to the approach of WWDC any many expected changes. Yet, existing lessons did receive quite a few updates!
 
