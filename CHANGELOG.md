@@ -7,6 +7,7 @@
 ](https://github.com/AvdLee/Swift-Concurrency-Course/issues/23). (Thanks, Z. Zeynalov, Melanie H!)
 - Updated lesson "Sendable and Value Types" to explain the impact of `@frozen` and `@usableFromInline` on implicit `Sendable` following issues [#15](https://github.com/AvdLee/Swift-Concurrency-Course/issues/15). (Thanks, Melanie H!)
 - Updated section "Handling errors by using a throwing variant" in lesson "Task Groups" to better explain how error propegation works. I've also added `TaskGroupsDemonstrator.errorPropegation()` to demonstrate this in the sample code. ([#16](https://github.com/AvdLee/Swift-Concurrency-Course/issues/16), thanks Z. Zeynalov!)
+- Fixed several grammar mistakes throughout the lessons ([#22](https://github.com/AvdLee/Swift-Concurrency-Course/issues/22), thanks Z. Zeynalov!)
 
 ## June 2025
 No new modules yet due to the approach of WWDC any many expected changes. Yet, existing lessons did receive quite a few updates!
