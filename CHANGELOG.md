@@ -10,6 +10,8 @@
 - Fixed several grammar mistakes throughout the lessons ([#22](https://github.com/AvdLee/Swift-Concurrency-Course/issues/22), thanks Z. Zeynalov!)
 - Updated lesson "Sendable and Reference Types" to properly mention "parent" vs. "child class". ([#20](https://github.com/AvdLee/Swift-Concurrency-Course/issues/20), thanks Z. Zeynalov!)
 - Updated lesson "Using AsyncStream and AsyncThrowingStream in your code" regarding subscribing to a terminated stream, which finishes the task immediately. ([#25](https://github.com/AvdLee/Swift-Concurrency-Course/issues/25), thanks Z. Zeynalov!)
+- Updated lesson "Controlling the default isolation domain" for Xcode 26
+- Updated lesson "Dispatching to different threads (Updated for Swift 6.2)" for Xcode 26
 
 ## June 2025
 No new modules yet due to the approach of WWDC any many expected changes. Yet, existing lessons did receive quite a few updates!
