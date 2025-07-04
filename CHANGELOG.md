@@ -3,6 +3,8 @@
 - Updated `ConcurrencyTasks.xcodeproj` for Xcode 26
 - Updated the Detached Tasks lesson section "Risks of using detached tasks" following issue [#6](https://github.com/AvdLee/Swift-Concurrency-Course/issues/6). (Thanks, L. Olivier!)
 - Updated the Detached Tasks lesson section "What is a detached task?" following issue [#13](https://github.com/AvdLee/Swift-Concurrency-Course/issues/13). (Thanks, Sivasankar K!)
+- Rewrote the section in lesson "An introduction to Global Actors" about using an enum towards using a private init instead following issues [#14](https://github.com/AvdLee/Swift-Concurrency-Course/issues/14) and [#23
+](https://github.com/AvdLee/Swift-Concurrency-Course/issues/23). (Thanks, Z. Zeynalov, Melanie H)
 
 ## June 2025
 No new modules yet due to the approach of WWDC any many expected changes. Yet, existing lessons did receive quite a few updates!

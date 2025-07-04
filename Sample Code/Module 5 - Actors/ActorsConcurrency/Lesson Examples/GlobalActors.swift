@@ -16,9 +16,10 @@ private final class ContentViewModel {
     /// ...
 }
 
-@globalActor public enum ImageProcessing {
-    public actor TheActor {}
-    public static let shared = TheActor()
+@globalActor actor ImageProcessing {
+    public static let shared = ImageProcessing()
+    
+    private init() { }
 }
 
 @ImageProcessing
