@@ -63,6 +63,8 @@ struct AsyncStreamDemonstrator {
         for await index in indexStream {
             print("Monitor 1: \(index)")
         }
+        
+        print("Index monitor finished")
     }
     
     func demonstrateBufferPolicy() async {

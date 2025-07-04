@@ -6,9 +6,10 @@
 - Rewrote the section in lesson "An introduction to Global Actors" about using an enum towards using a private init instead following issues [#14](https://github.com/AvdLee/Swift-Concurrency-Course/issues/14) and [#23
 ](https://github.com/AvdLee/Swift-Concurrency-Course/issues/23). (Thanks, Z. Zeynalov, Melanie H!)
 - Updated lesson "Sendable and Value Types" to explain the impact of `@frozen` and `@usableFromInline` on implicit `Sendable` following issues [#15](https://github.com/AvdLee/Swift-Concurrency-Course/issues/15). (Thanks, Melanie H!)
-- Updated section "Handling errors by using a throwing variant" in lesson "Task Groups" to better explain how error propegation works. I've also added `TaskGroupsDemonstrator.errorPropegation()` to demonstrate this in the sample code. ([#16](https://github.com/AvdLee/Swift-Concurrency-Course/issues/16), thanks Z. Zeynalov!)
+- Updated section "Handling errors by using a throwing variant" in lesson "Task Groups" to better explain how error propagation works. I've also added `TaskGroupsDemonstrator.errorPropagation()` to demonstrate this in the sample code. ([#16](https://github.com/AvdLee/Swift-Concurrency-Course/issues/16), thanks Z. Zeynalov!)
 - Fixed several grammar mistakes throughout the lessons ([#22](https://github.com/AvdLee/Swift-Concurrency-Course/issues/22), thanks Z. Zeynalov!)
 - Updated lesson "Sendable and Reference Types" to properly mention "parent" vs. "child class". ([#20](https://github.com/AvdLee/Swift-Concurrency-Course/issues/20), thanks Z. Zeynalov!)
+- Updated lesson "Using AsyncStream and AsyncThrowingStream in your code" regarding subscribing to a terminated stream, which finishes the task immediately. ([#25](https://github.com/AvdLee/Swift-Concurrency-Course/issues/25), thanks Z. Zeynalov!)
 
 ## June 2025
 No new modules yet due to the approach of WWDC any many expected changes. Yet, existing lessons did receive quite a few updates!

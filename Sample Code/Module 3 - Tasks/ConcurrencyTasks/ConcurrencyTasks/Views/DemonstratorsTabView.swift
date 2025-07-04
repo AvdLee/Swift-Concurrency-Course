@@ -56,10 +56,10 @@ struct DemonstratorsTabView: View {
                     }
                 }
                 
-                Button("Task Group Error Propegation Demonstration") {
+                Button("Task Group Error Propagation Demonstration") {
                     consoleLogsCapturer.clearLogs()
                     Task {
-                        await taskGroupsDemonstrator.errorPropegation()
+                        await taskGroupsDemonstrator.errorPropagation()
                     }
                 }
             }

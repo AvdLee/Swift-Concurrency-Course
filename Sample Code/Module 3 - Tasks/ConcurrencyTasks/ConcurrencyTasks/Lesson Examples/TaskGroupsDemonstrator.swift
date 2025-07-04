@@ -14,7 +14,7 @@ struct TaskGroupsDemonstrator {
         case someError
     }
     
-    func errorPropegation() async {
+    func errorPropagation() async {
         do {
             _ = try await withThrowingTaskGroup(of: UIImage.self, returning: [UIImage].self) { taskGroup in
                 throw Error.someError
