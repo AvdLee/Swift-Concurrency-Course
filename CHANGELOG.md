@@ -1,7 +1,7 @@
 ## July 2025
 ### Tasks
 - Updated `ConcurrencyTasks.xcodeproj` for Xcode 26
-- 
+- Updated the Detached Tasks lesson section "Risks of using detached tasks" following issue [#6](https://github.com/AvdLee/Swift-Concurrency-Course/issues/6). (Thanks, L. Olivier!)
 
 ## June 2025
 No new modules yet due to the approach of WWDC any many expected changes. Yet, existing lessons did receive quite a few updates!

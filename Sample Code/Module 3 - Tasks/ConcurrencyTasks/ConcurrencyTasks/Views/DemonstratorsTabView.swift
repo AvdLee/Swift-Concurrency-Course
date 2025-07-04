@@ -34,10 +34,16 @@ struct DemonstratorsTabView: View {
                     }
                 }
 
-                Button("Detached Task Demonstration") {
+                Button("Detached Task Print Demonstration") {
                     consoleLogsCapturer.clearLogs()
                     Task {
                         await detachedTasksDemonstrator.detachedTaskPrintExample()
+                    }
+                }
+                
+                Button("Detached Task Cancellation Demonstration") {
+                    consoleLogsCapturer.clearLogs()
+                    Task {
                         await detachedTasksDemonstrator.detachedTaskCancellationExample()
                     }
                 }

@@ -21,25 +21,34 @@ struct DetachedTasksDemonstrator {
         // Operation two
     }
     
+    private func asyncPrint(_ string: String) async {
+        print(string)
+    }
+    
     func detachedTaskCancellationExample() async {
         let outerTask = Task {
             /// This one will cancel.
+            print("Start longRunningAsyncOperation 1")
             await longRunningAsyncOperation()
 
             /// This detached task won't cancel.
             Task.detached(priority: .background) {
+                try Task.checkCancellation()
+
                 /// And, therefore, this task won't cancel either.
+                print("Start longRunningAsyncOperation 2")
                 await longRunningAsyncOperation()
             }
         }
         outerTask.cancel()
     }
-    
-    private func asyncPrint(_ string: String) async {
-        print(string)
-    }
-    
+
+    /// Faking a long running task by using a `Task.sleep`
     private func longRunningAsyncOperation() async {
-        // Just a fake example method for the demonstration of detached tasks below.
+        do {
+            try await Task.sleep(for: .seconds(5))
+        } catch {
+            print("\(#function) failed with error: \(error)")
+        }
     }
 }
