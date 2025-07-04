@@ -9,6 +9,61 @@ import UIKit
 import Foundation
 
 struct TaskGroupsDemonstrator {
+    
+    enum Error: Swift.Error {
+        case someError
+    }
+    
+    func errorPropegation() async {
+        do {
+            _ = try await withThrowingTaskGroup(of: UIImage.self, returning: [UIImage].self) { taskGroup in
+                throw Error.someError
+            }
+            print("Example 1 succeeded")
+        } catch {
+            print("Example 1 failed with error \(error)")
+        }
+        
+        do {
+            _ = try await withThrowingTaskGroup(of: UIImage.self, returning: [UIImage].self) { taskGroup in
+                let photoURLs = try await listPhotoURLs(inGallery: "Amsterdam Holiday")
+                
+                for _ in photoURLs {
+                    taskGroup.addTask { throw Error.someError }
+                }
+                
+                return try await taskGroup.reduce(into: [UIImage]()) { partialResult, name in
+                    partialResult.append(name)
+                }
+            }
+            print("Example 2 succeeded")
+        } catch {
+            print("Example 2 failed with error \(error)")
+        }
+        
+        do {
+            _ = try await withThrowingTaskGroup(of: UIImage.self, returning: [UIImage].self) { taskGroup in
+                let photoURLs = try await listPhotoURLs(inGallery: "Amsterdam Holiday")
+                
+                for _ in photoURLs {
+                    taskGroup.addTask { throw Error.someError }
+                }
+                
+                var images = [UIImage]()
+
+                /// Note the use of `next()` to propegate failures to the task group:
+                while let downloadImage = try await taskGroup.next() {
+                    images.append(downloadImage)
+                }
+
+                return images
+            }
+            print("Example 3 succeeded")
+        } catch {
+            print("Example 3 failed with error \(error)")
+        }
+    }
+    
     /// This example fetches images without failing the task group if a photo download fails.
     func fetchImages() async throws -> [UIImage] {
         try await withThrowingTaskGroup(of: UIImage.self, returning: [UIImage].self) { taskGroup in

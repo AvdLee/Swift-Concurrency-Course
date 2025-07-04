@@ -12,7 +12,8 @@ struct DemonstratorsTabView: View {
     let errorHandlingDemonstrator = ErrorHandlingDemonstrator()
     let detachedTasksDemonstrator = DetachedTasksDemonstrator()
     let taskPriorityDemonstrator = TaskPriorityDemonstrator()
-
+    let taskGroupsDemonstrator = TaskGroupsDemonstrator()
+    
     @State private var consoleLogsCapturer = ConsoleLogsCapturer()
 
     var body: some View {
@@ -52,6 +53,13 @@ struct DemonstratorsTabView: View {
                     consoleLogsCapturer.clearLogs()
                     Task {
                         taskPriorityDemonstrator.demonstrate()
+                    }
+                }
+                
+                Button("Task Group Error Propegation Demonstration") {
+                    consoleLogsCapturer.clearLogs()
+                    Task {
+                        await taskGroupsDemonstrator.errorPropegation()
                     }
                 }
             }
