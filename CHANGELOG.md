@@ -1,3 +1,10 @@
+## August 2025
+### Tasks
+- **Added a new lesson:** Creating a Task timeout handler using a Task Group
+
+### Actors
+- **Added a new lesson:** Using a Mutex as an alternative to actors
+
 ## July 2025
 ### Tasks
 - Updated `ConcurrencyTasks.xcodeproj` for Xcode 26

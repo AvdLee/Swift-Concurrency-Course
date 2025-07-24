@@ -13,7 +13,7 @@ struct DemonstratorsTabView: View {
     let detachedTasksDemonstrator = DetachedTasksDemonstrator()
     let taskPriorityDemonstrator = TaskPriorityDemonstrator()
     let taskGroupsDemonstrator = TaskGroupsDemonstrator()
-    
+    let taskTimeoutDemonstrator = TaskTimeoutDemonstrator()
     @State private var consoleLogsCapturer = ConsoleLogsCapturer()
 
     var body: some View {
@@ -60,6 +60,18 @@ struct DemonstratorsTabView: View {
                     consoleLogsCapturer.clearLogs()
                     Task {
                         await taskGroupsDemonstrator.errorPropagation()
+                    }
+                }
+                Button("Task Initializer Timeout Demonstration") {
+                    consoleLogsCapturer.clearLogs()
+                    Task {
+                        await taskTimeoutDemonstrator.demonstrateTaskInitializer()
+                    }
+                }
+                Button("Global Timeout Function Demonstration") {
+                    consoleLogsCapturer.clearLogs()
+                    Task {
+                        await taskTimeoutDemonstrator.demonstrateGlobalTimeoutFunction()
                     }
                 }
             }
