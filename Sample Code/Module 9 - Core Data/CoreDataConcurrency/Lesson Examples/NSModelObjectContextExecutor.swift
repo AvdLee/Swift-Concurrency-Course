@@ -7,7 +7,7 @@
 
 import CoreData
 
-final class NSModelObjectContextExecutor: @unchecked Sendable, SerialExecutor {
+final nonisolated class NSModelObjectContextExecutor: @unchecked Sendable, SerialExecutor {
 
     let context: NSManagedObjectContext
     

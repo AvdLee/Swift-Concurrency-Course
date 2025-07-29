@@ -10,7 +10,7 @@ public import Foundation
 public import CoreData
 
 @objc(Article)
-public final class Article: NSManagedObject, Identifiable {
+public final nonisolated class Article: NSManagedObject, Identifiable {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Article> {
         return NSFetchRequest<Article>(entityName: "Article")
     }

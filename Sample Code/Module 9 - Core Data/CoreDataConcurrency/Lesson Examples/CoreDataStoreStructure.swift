@@ -7,7 +7,7 @@
 
 import CoreData
 
-struct CoreDataStoreStructure {
+nonisolated struct CoreDataStoreStructure {
     
     let viewContext: NSManagedObjectContext
     let backgroundContext: NSManagedObjectContext
@@ -19,8 +19,6 @@ struct CoreDataStoreStructure {
     
     @MainActor
     func performWorkOnViewContext(closure: @escaping (NSManagedObjectContext) throws -> Void) async rethrows {
-        try await viewContext.perform {
-            try closure(viewContext)
-        }
+        try closure(viewContext)
     }
 }
