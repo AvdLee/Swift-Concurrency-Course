@@ -10,9 +10,10 @@
 ### Actors
 - **Added a new lesson:** [Using a Mutex as an alternative to actors](https://courses.avanderlee.com/courses/swift-concurrency/lectures/62306972)
 
-### Migration
+### Migrating
 - **Added a new lesson:** [The Approachable Concurrency build setting](https://courses.avanderlee.com/courses/swift-concurrency/lectures/62485046)
 - **Updated a lesson:** Added the Approachable Concurrency build setting as an additional migration step in ["Steps to migrate existing code to Swift 6 and Strict Concurrency Checking"](https://courses.avanderlee.com/courses/swift-concurrency/lectures/59997246)
+- **Updated a lesson:** Mentioned AsyncExtensions open-source framework and a threading risk for Combine in lesson [Migrating away from Functional Reactive Programming like RxSwift or Combine](https://courses.avanderlee.com/courses/swift-concurrency/lectures/60010397)
 
 ## July 2025
 ### Tasks
