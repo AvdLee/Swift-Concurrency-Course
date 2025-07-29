@@ -14,6 +14,8 @@ struct DemonstratorsTabView: View {
     let taskPriorityDemonstrator = TaskPriorityDemonstrator()
     let taskGroupsDemonstrator = TaskGroupsDemonstrator()
     let taskTimeoutDemonstrator = TaskTimeoutDemonstrator()
+    let discardingTaskGroupsDemonstrator = DiscardingTaskGroupsDemonstrator()
+    
     @State private var consoleLogsCapturer = ConsoleLogsCapturer()
 
     var body: some View {
@@ -73,6 +75,10 @@ struct DemonstratorsTabView: View {
                     Task {
                         await taskTimeoutDemonstrator.demonstrateGlobalTimeoutFunction()
                     }
+                }
+                Button("Discarding Task Group Demonstration") {
+                    consoleLogsCapturer.clearLogs()
+                    discardingTaskGroupsDemonstrator.demonstrate()
                 }
             }
             Section("Console Output") {

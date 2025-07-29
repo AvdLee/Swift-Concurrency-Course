@@ -1,6 +1,11 @@
 ## August 2025
+
+### New Module: Core Data
+- A whole new module containing 4 lessons dedicated to Core Data and Swift Concurrency.
+
 ### Tasks
 - **Added a new lesson:** Creating a Task timeout handler using a Task Group
+- **Added a new lesson:** Discarding Task Groups
 
 ### Actors
 - **Added a new lesson:** Using a Mutex as an alternative to actors
