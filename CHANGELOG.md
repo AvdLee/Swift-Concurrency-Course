@@ -1,14 +1,18 @@
 ## August 2025
 
 ### New Module: Core Data
-- A whole new module containing 4 lessons dedicated to Core Data and Swift Concurrency.
+- A whole new module containing 4 lessons dedicated to Core Data and Swift Concurrency, starting with [An introduction to Swift Concurrency and Core Data](https://courses.avanderlee.com/courses/swift-concurrency/lectures/62485126).
 
 ### Tasks
-- **Added a new lesson:** Creating a Task timeout handler using a Task Group
-- **Added a new lesson:** Discarding Task Groups
+- **Added a new lesson:** [Creating a Task timeout handler using a Task Group](https://courses.avanderlee.com/courses/swift-concurrency/lectures/62438091)
+- **Added a new lesson:** [Discarding Task Groups](https://courses.avanderlee.com/courses/swift-concurrency/lectures/62485188)
 
 ### Actors
-- **Added a new lesson:** Using a Mutex as an alternative to actors
+- **Added a new lesson:** [Using a Mutex as an alternative to actors](https://courses.avanderlee.com/courses/swift-concurrency/lectures/62306972)
+
+### Migration
+- **Added a new lesson:** [The Approachable Concurrency build setting](https://courses.avanderlee.com/courses/swift-concurrency/lectures/62485046)
+- **Updated a lesson:** Added the Approachable Concurrency build setting as an additional migration step in ["Steps to migrate existing code to Swift 6 and Strict Concurrency Checking"](https://courses.avanderlee.com/courses/swift-concurrency/lectures/59997246)
 
 ## July 2025
 ### Tasks
