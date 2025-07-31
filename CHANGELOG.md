@@ -9,6 +9,13 @@
 
 ### Actors
 - **Added a new lesson:** [Using a Mutex as an alternative to actors](https://courses.avanderlee.com/courses/swift-concurrency/lectures/62306972)
+- **Added a new lesson:** [Adding isolated conformance to protocols](https://courses.avanderlee.com/courses/swift-concurrency/lectures/62485157)
+- **Added a new lesson:** [Using Isolated synchronous deinit](https://courses.avanderlee.com/courses/swift-concurrency/lectures/62485150)
+- Updated the sample project to have the console logger view as well.
+
+### Threads
+- **Updated a lesson:** Better explained nonisolated(nonsending) in lesson [Dispatching to different threads using nonisolated(nonsending) and @concurrent (Updated for Swift 6.2)](https://courses.avanderlee.com/courses/swift-concurrency/lectures/59997228)
+- Updated sample code mention of upcoming feature to `NonisolatedNonsendingByDefault`.
 
 ### Migrating
 - **Added a new lesson:** [The Approachable Concurrency build setting](https://courses.avanderlee.com/courses/swift-concurrency/lectures/62485046)

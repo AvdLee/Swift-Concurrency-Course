@@ -74,7 +74,7 @@ struct ThreadingDemonstrator {
         // Background task started on thread: <NSThread: 0x600001553080>{number = 5, name = (null)}
     }
     
-    func fetchData(completion: @escaping @Sendable (Result<String, Error>) -> Void) {
+    nonisolated func fetchData(completion: @escaping @Sendable (Result<String, Error>) -> Void) {
         let seconds = 1.0 // Simulating network delay
         DispatchQueue.global().asyncAfter(deadline: .now() + seconds) {
             completion(.success("Data"))
@@ -126,7 +126,7 @@ extension Thread {
     /// This is a workaround for compiler error:
     /// Class property 'current' is unavailable from asynchronous contexts; Thread.current cannot be used from async contexts.
     /// See: https://github.com/swiftlang/swift-corelibs-foundation/issues/5139
-    public static var currentThread: Thread {
+    public nonisolated static var currentThread: Thread {
         return Thread.current
     }
 }

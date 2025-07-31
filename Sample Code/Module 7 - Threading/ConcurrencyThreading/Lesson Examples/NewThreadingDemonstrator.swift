@@ -8,7 +8,7 @@
 import Foundation
 
 /// Note: This demonstrates how Swift 6.2 will work with threading.
-/// Enable this today with upcoming feature flag `AsyncCallerExecution`.
+/// Enable this using upcoming feature flag `NonisolatedNonsendingByDefault`.
 /// See: https://github.com/swiftlang/swift-evolution/blob/main/proposals/0461-async-function-isolation.md
 @MainActor
 struct NewThreadingDemonstrator {
