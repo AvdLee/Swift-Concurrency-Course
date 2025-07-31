@@ -12,27 +12,45 @@ struct ContentView: View {
     private let isolatedKeywordDemonstrator = IsolatedKeywordDemonstrator()
     private let actorReentrancyDemonstrator = ActorReentrancyDemonstrator()
     private let customActorExecutorDemonstrator = CustomActorExecutorDemonstrator()
+    private let isolatedDeinitDemonstrator = IsolatedDeinitDemonstrator()
+    
+    @State private var consoleLogsCapturer = ConsoleLogsCapturer()
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-        .task {
-            await introductionToActorsDemonstrator.demonstrate()
-        }
-        .task {
-            isolatedKeywordDemonstrator.demonstrate()
-        }
-        .task {
-            await actorReentrancyDemonstrator.demonstrate()
-        }
-        .task {
-            await customActorExecutorDemonstrator.demonstrate()
-        }
+        Form {
+            Section(header: Text("Tap the button and look below for the print statements to learn")) {
+                Button("Actor Introduction Demonstration") {
+                    consoleLogsCapturer.clearLogs()
+                    Task {
+                        await introductionToActorsDemonstrator.demonstrate()
+                    }
+                }
+                Button("Isolated Keyword Demonstration") {
+                    consoleLogsCapturer.clearLogs()
+                    isolatedKeywordDemonstrator.demonstrate()
+                }
+                Button("Actor Reentrancy Demonstration") {
+                    consoleLogsCapturer.clearLogs()
+                    Task {
+                        await actorReentrancyDemonstrator.demonstrate()
+                    }
+                }
+                Button("Custom Actor Executor Demonstration") {
+                    consoleLogsCapturer.clearLogs()
+                    Task {
+                        await customActorExecutorDemonstrator.demonstrate()
+                    }
+                }
+                Button("Isolated Deinit Demonstration") {
+                    consoleLogsCapturer.clearLogs()
+                    isolatedDeinitDemonstrator.demonstrate()
+                }
+
+            }
+            Section("Console Output") {
+                ConsoleLogsView(logs: consoleLogsCapturer.logs)
+            }
+        }.formStyle(.grouped)
     }
 }
 
