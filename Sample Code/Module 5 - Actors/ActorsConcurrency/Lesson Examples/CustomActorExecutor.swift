@@ -126,7 +126,7 @@ extension Thread {
     /// This is a workaround for compiler error:
     /// Class property 'current' is unavailable from asynchronous contexts; Thread.current cannot be used from async contexts.
     /// See: https://github.com/swiftlang/swift-corelibs-foundation/issues/5139
-    static var currentThread: Thread {
+    nonisolated static var currentThread: Thread {
         return Thread.current
     }
     

@@ -39,5 +39,18 @@ struct DemonstratorsTabView: View {
                 ConsoleLogsView(logs: consoleLogsCapturer.logs)
             }
         }
+        .task(priority: .high, {
+            /// Executes earlier than a task scheduled inside `onAppaer`.
+            print("1")
+        })
+        .onAppear {
+            /// Scheduled later than using the `task` modifier which
+            /// adds an asynchronous task to perform before the view appears.
+            Task(priority: .high) { print("2") }
+            
+            /// Regular code inside `onAppear` might appear to run earlier than a `Task`.
+            /// This is due to the task executor scheduler.
+            print("3")
+        }
     }
 }

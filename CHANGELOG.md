@@ -3,9 +3,13 @@
 ### New Module: Core Data
 - A whole new module containing 4 lessons dedicated to Core Data and Swift Concurrency, starting with [An introduction to Swift Concurrency and Core Data](https://courses.avanderlee.com/courses/swift-concurrency/lectures/62485126).
 
+## Async/Await basics
+- **Updated a lesson:**: Removed the redundant `try await` early in the lesson [Calling async functions in parallel using async let](https://courses.avanderlee.com/courses/swift-concurrency/lectures/59997414) to avoid confusion. (Thanks, C. Lawther!)
+
 ### Tasks
 - **Added a new lesson:** [Creating a Task timeout handler using a Task Group](https://courses.avanderlee.com/courses/swift-concurrency/lectures/62438091)
 - **Added a new lesson:** [Discarding Task Groups](https://courses.avanderlee.com/courses/swift-concurrency/lectures/62485188)
+- **Updated a lesson:** The [Task Cancellation](https://courses.avanderlee.com/courses/swift-concurrency/lectures/59997234) lesson now explicitly explains the order of execution when using SwiftUI's task modifier. (Thanks, ginnheimerCoder!)
 
 ### Actors
 - **Added a new lesson:** [Using a Mutex as an alternative to actors](https://courses.avanderlee.com/courses/swift-concurrency/lectures/62306972)
@@ -16,11 +20,15 @@
 ### Threads
 - **Updated a lesson:** Better explained nonisolated(nonsending) in lesson [Dispatching to different threads using nonisolated(nonsending) and @concurrent (Updated for Swift 6.2)](https://courses.avanderlee.com/courses/swift-concurrency/lectures/59997228)
 - Updated sample code mention of upcoming feature to `NonisolatedNonsendingByDefault`.
+- Removed duplicate answer in Question 9 of the assessment. (Thanks, C. Lawther!)
 
 ### Migrating
 - **Added a new lesson:** [The Approachable Concurrency build setting](https://courses.avanderlee.com/courses/swift-concurrency/lectures/62485046)
 - **Updated a lesson:** Added the Approachable Concurrency build setting as an additional migration step in ["Steps to migrate existing code to Swift 6 and Strict Concurrency Checking"](https://courses.avanderlee.com/courses/swift-concurrency/lectures/59997246)
 - **Updated a lesson:** Mentioned AsyncExtensions open-source framework and a threading risk for Combine in lesson [Migrating away from Functional Reactive Programming like RxSwift or Combine](https://courses.avanderlee.com/courses/swift-concurrency/lectures/60010397)
+
+### General improvements
+- Made `currentThread` convenience method `nonisolated` to avoid compiler issues when using `@MainActor` default actor isolation. (Thanks, L. Olivier!)
 
 ## July 2025
 ### Tasks
