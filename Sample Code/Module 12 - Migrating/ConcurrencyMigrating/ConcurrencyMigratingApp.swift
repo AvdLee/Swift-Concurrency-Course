@@ -18,6 +18,9 @@ struct ConcurrencyMigratingApp: App {
                 Tab("Search with Concurrency", systemImage: "sparkle.magnifyingglass") {
                     Concurrency_SearchArticleView()
                 }
+                Tab("Notifications", systemImage: "exclamationmark.circle") {
+                    NotificationEmitterView()
+                }
             }
         }
     }

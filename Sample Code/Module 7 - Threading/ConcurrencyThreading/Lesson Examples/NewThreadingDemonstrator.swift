@@ -30,7 +30,12 @@ class NotSendable {
 
     func performAsync() async {
         print("Task started on thread: \(Thread.currentThread)")
-        // Old situation: Task started on thread: <NSThread: 0x600003694d00>{number = 8, name = (null)}
-        // New situation: Task started on thread: <_NSMainThread: 0x6000006b4040>{number = 1, name = main}
+        /// Old situation:
+        /// Task started on thread: <NSThread: 0x600003694d00>{number = 8, name = (null)}
+        
+        /// New situation:
+        /// Task started on thread: <_NSMainThread: 0x6000006b4040>{number = 1, name = main}
     }
 }
+
+

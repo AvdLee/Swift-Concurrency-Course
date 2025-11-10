@@ -1,9 +1,14 @@
+## November 2025
+### Migrating
+- **Added a new video:** [Migration Tooling for upcoming Swift Features](https://courses.avanderlee.com/courses/swift-concurrency/lectures/62060933)
+- **Added a new lesson:** [Migrating to concurrency-safe notifications](https://courses.avanderlee.com/courses/swift-concurrency/lectures/62485107)
+
 ## August 2025
 
 ### New Module: Core Data
 - A whole new module containing 4 lessons dedicated to Core Data and Swift Concurrency, starting with [An introduction to Swift Concurrency and Core Data](https://courses.avanderlee.com/courses/swift-concurrency/lectures/62485126).
 
-## Async/Await basics
+### Async/Await basics
 - **Updated a lesson:**: Removed the redundant `try await` early in the lesson [Calling async functions in parallel using async let](https://courses.avanderlee.com/courses/swift-concurrency/lectures/59997414) to avoid confusion. (Thanks, C. Lawther!)
 
 ### Tasks
