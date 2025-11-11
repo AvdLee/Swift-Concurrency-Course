@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		8454F75A2DCA30D20056B2EB /* ConcurrencyThreading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConcurrencyThreading.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8442FBA22EC3677000874735 /* ConcurrencyPerformance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConcurrencyPerformance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		8454F75C2DCA30D20056B2EB /* ConcurrencyThreading */ = {
+		8442FBA42EC3677000874735 /* ConcurrencyPerformance */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ConcurrencyThreading;
+			path = ConcurrencyPerformance;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8454F7572DCA30D20056B2EB /* Frameworks */ = {
+		8442FB9F2EC3677000874735 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -29,18 +29,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8454F7512DCA30D20056B2EB = {
+		8442FB992EC3677000874735 = {
 			isa = PBXGroup;
 			children = (
-				8454F75C2DCA30D20056B2EB /* ConcurrencyThreading */,
-				8454F75B2DCA30D20056B2EB /* Products */,
+				8442FBA42EC3677000874735 /* ConcurrencyPerformance */,
+				8442FBA32EC3677000874735 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		8454F75B2DCA30D20056B2EB /* Products */ = {
+		8442FBA32EC3677000874735 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8454F75A2DCA30D20056B2EB /* ConcurrencyThreading.app */,
+				8442FBA22EC3677000874735 /* ConcurrencyPerformance.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,64 +48,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8454F7592DCA30D20056B2EB /* ConcurrencyThreading */ = {
+		8442FBA12EC3677000874735 /* ConcurrencyPerformance */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8454F77C2DCA30D30056B2EB /* Build configuration list for PBXNativeTarget "ConcurrencyThreading" */;
+			buildConfigurationList = 8442FBAD2EC3677100874735 /* Build configuration list for PBXNativeTarget "ConcurrencyPerformance" */;
 			buildPhases = (
-				8454F7562DCA30D20056B2EB /* Sources */,
-				8454F7572DCA30D20056B2EB /* Frameworks */,
-				8454F7582DCA30D20056B2EB /* Resources */,
+				8442FB9E2EC3677000874735 /* Sources */,
+				8442FB9F2EC3677000874735 /* Frameworks */,
+				8442FBA02EC3677000874735 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				8454F75C2DCA30D20056B2EB /* ConcurrencyThreading */,
+				8442FBA42EC3677000874735 /* ConcurrencyPerformance */,
 			);
-			name = ConcurrencyThreading;
+			name = ConcurrencyPerformance;
 			packageProductDependencies = (
 			);
-			productName = ConcurrencyThreading;
-			productReference = 8454F75A2DCA30D20056B2EB /* ConcurrencyThreading.app */;
+			productName = ConcurrencyPerformance;
+			productReference = 8442FBA22EC3677000874735 /* ConcurrencyPerformance.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		8454F7522DCA30D20056B2EB /* Project object */ = {
+		8442FB9A2EC3677000874735 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1630;
-				LastUpgradeCheck = 1630;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
 				TargetAttributes = {
-					8454F7592DCA30D20056B2EB = {
-						CreatedOnToolsVersion = 16.3;
+					8442FBA12EC3677000874735 = {
+						CreatedOnToolsVersion = 26.0.1;
 					};
 				};
 			};
-			buildConfigurationList = 8454F7552DCA30D20056B2EB /* Build configuration list for PBXProject "ConcurrencyThreading" */;
+			buildConfigurationList = 8442FB9D2EC3677000874735 /* Build configuration list for PBXProject "ConcurrencyPerformance" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 8454F7512DCA30D20056B2EB;
+			mainGroup = 8442FB992EC3677000874735;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 8454F75B2DCA30D20056B2EB /* Products */;
+			productRefGroup = 8442FBA32EC3677000874735 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8454F7592DCA30D20056B2EB /* ConcurrencyThreading */,
+				8442FBA12EC3677000874735 /* ConcurrencyPerformance */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8454F7582DCA30D20056B2EB /* Resources */ = {
+		8442FBA02EC3677000874735 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -115,7 +115,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8454F7562DCA30D20056B2EB /* Sources */ = {
+		8442FB9E2EC3677000874735 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -125,7 +125,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		8454F77A2DCA30D30056B2EB /* Debug */ = {
+		8442FBAB2EC3677100874735 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -187,7 +187,7 @@
 			};
 			name = Debug;
 		};
-		8454F77B2DCA30D30056B2EB /* Release */ = {
+		8442FBAC2EC3677100874735 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -241,17 +241,18 @@
 			};
 			name = Release;
 		};
-		8454F77D2DCA30D30056B2EB /* Debug */ = {
+		8442FBAE2EC3677100874735 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = ConcurrencyThreading/Resources/ConcurrencyThreading.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4QMDKC8VLJ;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -263,37 +264,39 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MACOSX_DEPLOYMENT_TARGET = 15.7;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.swiftlee.ConcurrencyThreading;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiftlee.ConcurrencyPerformance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_NONISOLATED_NONSENDING_BY_DEFAULT = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				XROS_DEPLOYMENT_TARGET = 2.4;
+				XROS_DEPLOYMENT_TARGET = 26.0;
 			};
 			name = Debug;
 		};
-		8454F77E2DCA30D30056B2EB /* Release */ = {
+		8442FBAF2EC3677100874735 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = ConcurrencyThreading/Resources/ConcurrencyThreading.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4QMDKC8VLJ;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -305,48 +308,49 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MACOSX_DEPLOYMENT_TARGET = 15.7;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.swiftlee.ConcurrencyThreading;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiftlee.ConcurrencyPerformance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_NONISOLATED_NONSENDING_BY_DEFAULT = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				XROS_DEPLOYMENT_TARGET = 2.4;
+				XROS_DEPLOYMENT_TARGET = 26.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8454F7552DCA30D20056B2EB /* Build configuration list for PBXProject "ConcurrencyThreading" */ = {
+		8442FB9D2EC3677000874735 /* Build configuration list for PBXProject "ConcurrencyPerformance" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8454F77A2DCA30D30056B2EB /* Debug */,
-				8454F77B2DCA30D30056B2EB /* Release */,
+				8442FBAB2EC3677100874735 /* Debug */,
+				8442FBAC2EC3677100874735 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8454F77C2DCA30D30056B2EB /* Build configuration list for PBXNativeTarget "ConcurrencyThreading" */ = {
+		8442FBAD2EC3677100874735 /* Build configuration list for PBXNativeTarget "ConcurrencyPerformance" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8454F77D2DCA30D30056B2EB /* Debug */,
-				8454F77E2DCA30D30056B2EB /* Release */,
+				8442FBAE2EC3677100874735 /* Debug */,
+				8442FBAF2EC3677100874735 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 8454F7522DCA30D20056B2EB /* Project object */;
+	rootObject = 8442FB9A2EC3677000874735 /* Project object */;
 }
