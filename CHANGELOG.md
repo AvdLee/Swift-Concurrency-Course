@@ -1,7 +1,28 @@
 ## November 2025
+
+### New module: Performance
+- **A whole new module** with 4 lessons and an assessment, teaching you how to deal with performance in Swift Concurrency.
+
+### Introduction
+- **Updated a lesson:** [What is structured concurrency](https://courses.avanderlee.com/courses/swift-concurrency/lectures/59997222) had an invalid code example (the one with Result enum). (Thanks, M. La Gala!)
+
+### Task Groups
+- **Updated a lesson:** Added a small note regarding discarding task groups cancellation behavior on errors. (See [Issue #64](https://github.com/AvdLee/Swift-Concurrency-Course/issues/64)) (Thanks, Luc Olivier!)
+- **Updated a lesson:** Task group timeout code example uses Swift 6.2 APIs. [Added a note for this](https://courses.avanderlee.com/courses/swift-concurrency/lectures/62438091). (Thanks, Luc Olivier!)
+
+### Actors
+- **Updated a lesson:** [Added a paragraph about Mutex being thread blocking](https://courses.avanderlee.com/courses/swift-concurrency/lectures/62306972) (Thanks, moreindirection!)
+
+### Threading
+- **Updated a lesson:** [How Threads relate to Tasks in Swift Concurrency](https://courses.avanderlee.com/courses/swift-concurrency/lectures/60100309) now mentions the use of a Thread.currentThread extension. (Thanks, Luc Olivier!)
+
 ### Migrating
 - **Added a new video:** [Migration Tooling for upcoming Swift Features](https://courses.avanderlee.com/courses/swift-concurrency/lectures/62060933)
+- **Added a new video:** [The Approachable Concurrency build setting (Updated for Swift 6.2)](https://courses.avanderlee.com/courses/swift-concurrency/lectures/62485046)
 - **Added a new lesson:** [Migrating to concurrency-safe notifications](https://courses.avanderlee.com/courses/swift-concurrency/lectures/62485107)
+
+### General
+- Certificate completion page layout now looks normal on larger screens (Thanks, C. Lawther!)
 
 ## August 2025
 
