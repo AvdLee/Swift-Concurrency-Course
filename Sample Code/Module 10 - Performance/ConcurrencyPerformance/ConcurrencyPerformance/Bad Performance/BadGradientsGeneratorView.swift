@@ -14,7 +14,13 @@ final class BadGradientsGeneratorViewModel {
     var wallpapers: [Wallpaper] = []
     var isGenerating: Bool = false
     
+    let wallpapersGenerator = WallpapersGenerator()
+    
     func regenerateWallpapers() {
+        regenerateWallpapers_v5()
+    }
+    
+    func regenerateWallpapers_v1() {
         wallpapers.removeAll()
         isGenerating = true
         
@@ -26,7 +32,7 @@ final class BadGradientsGeneratorViewModel {
                     controlPointCount: 2,
                     nearestPointsToSample: 1
                 )
-                
+
                 let image = generator.generate()
                 wallpapers.insert(Wallpaper(image: image), at: 0)
                 
@@ -35,6 +41,130 @@ final class BadGradientsGeneratorViewModel {
                 }
             }
         }
+    }
+    
+    func regenerateWallpapers_v2() {
+        wallpapers.removeAll()
+        isGenerating = true
+        
+        Task {
+            for _ in 0..<numberOfWallpapersToGenerate {
+                let wallpaper = await wallpapersGenerator.generate()
+                wallpapers.insert(wallpaper, at: 0)
+                
+                if self.wallpapers.count == self.numberOfWallpapersToGenerate {
+                    self.isGenerating = false
+                }
+            }
+        }
+    }
+    
+    func regenerateWallpapers_v3() {
+        wallpapers.removeAll()
+        isGenerating = true
+        
+        Task {
+            await withTaskGroup { group in
+                for index in 0..<numberOfWallpapersToGenerate {
+                    group.addTask(name: "Wallpaper \(index)") {
+                        let wallpaper = await self.wallpapersGenerator.generate()
+                        return wallpaper
+                    }
+                }
+                
+                for await wallpaper in group {
+                    wallpapers.insert(wallpaper, at: 0)
+                    
+                    if self.wallpapers.count == self.numberOfWallpapersToGenerate {
+                        self.isGenerating = false
+                    }
+                }
+            }
+        }
+    }
+    
+    func regenerateWallpapers_v4() {
+        wallpapers.removeAll()
+        isGenerating = true
+        
+        for index in 0..<numberOfWallpapersToGenerate {
+            Task(name: "Wallpaper \(index)") {
+                /// Task State 1: Running
+                /// Task State 2: Suspended to go into `ConcurrentWallpaperGenerator`
+                /// Task State 3: Running while inside `ConcurrentWallpaperGenerator.generate()`
+                let wallpaper = await ConcurrentWallpaperGenerator.generate()
+                /// Task State 4: Suspended to go back into this `@MainActor` isolation domain.
+                /// Task State 5: Running while inserting the wallpaper into `BadGradientsGeneratorViewModel`
+                
+                self.wallpapers.insert(wallpaper, at: 0)
+                
+                if self.wallpapers.count == self.numberOfWallpapersToGenerate {
+                    self.isGenerating = false
+                }
+            }
+        }
+    }
+    
+    func regenerateWallpapers_v5() {
+        wallpapers.removeAll()
+        isGenerating = true
+        
+        for index in 0..<numberOfWallpapersToGenerate {
+            Task(name: "Wallpaper \(index)") { @concurrent in
+                let wallpaper = SynchronousWallpaperGenerator.generate()
+                
+                await MainActor.run {
+                    self.wallpapers.insert(wallpaper, at: 0)
+                    
+                    if self.wallpapers.count == self.numberOfWallpapersToGenerate {
+                        self.isGenerating = false
+                    }
+                }
+            }
+        }
+    }
+}
+
+nonisolated struct SynchronousWallpaperGenerator {
+    static func generate() -> Wallpaper {
+        let generator = BadGradientWallpaperGenerator(
+            width: 640,
+            height: 360,
+            controlPointCount: 2,
+            nearestPointsToSample: 1
+        )
+        
+        let image = generator.generate()
+        return Wallpaper(image: image)
+    }
+}
+
+struct ConcurrentWallpaperGenerator {
+    @concurrent
+    static func generate() async -> Wallpaper {
+        let generator = BadGradientWallpaperGenerator(
+            width: 640,
+            height: 360,
+            controlPointCount: 2,
+            nearestPointsToSample: 1
+        )
+        
+        let image = generator.generate()
+        return Wallpaper(image: image)
+    }
+}
+
+actor WallpapersGenerator {
+    func generate() -> Wallpaper {
+        let generator = BadGradientWallpaperGenerator(
+            width: 640,
+            height: 360,
+            controlPointCount: 2,
+            nearestPointsToSample: 1
+        )
+        
+        let image = generator.generate()
+        return Wallpaper(image: image)
     }
 }
 
