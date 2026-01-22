@@ -64,7 +64,7 @@ struct TaskGroupsDemonstrator {
         }
     }
     
-    /// This example fetches images without failing the task group if a photo download fails.
+    /// This example fetches images and only returns all images if none of the requests fail.
     func fetchImages() async throws -> [UIImage] {
         try await withThrowingTaskGroup(of: UIImage.self, returning: [UIImage].self) { taskGroup in
             let photoURLs = try await listPhotoURLs(inGallery: "Amsterdam Holiday")

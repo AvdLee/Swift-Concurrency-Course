@@ -9,37 +9,47 @@ import UIKit
 import Foundation
 
 struct CancelTaskDemonstrator {
+
     /// Use this method to try out the cancellation logic from the Task cancellation lesson.
     /// See the `imageTask.cancel()` line at the tail of this method.
     func fetchImageCancelDemonstration() async throws -> UIImage {
         let imageTask = Task {
             let fallbackImage = UIImage(systemName: "fallback_image")!
-            
+
             let imageURL = URL(string: "https://httpbin.org/image")!
             var imageRequest = URLRequest(url: imageURL)
             imageRequest.allHTTPHeaderFields = ["accept": "image/jpeg"]
-            
+
             /// Check for cancellation before the network request starts.
             guard !Task.isCancelled else {
                 return fallbackImage
             }
-            
+
             print("Starting network request...")
-            let (imageData, _) = try await URLSession.shared.data(for: imageRequest)
-            
+
+            let imageData: Data
+            do {
+                let (data, _) = try await URLSession.shared.data(for: imageRequest)
+                imageData = data
+            } catch is CancellationError {
+                /// URLSession throws a CancellationError if the task is cancelled while awaiting.
+                /// Return the fallback image instead of propagating the error.
+                return fallbackImage
+            }
+
             /// Check for cancellation after the network request.
             /// Potentially, you would perform image operations on `imageData`
             guard !Task.isCancelled else {
                 return fallbackImage
             }
-            
+
             /// ... Perform heavy image operations on `imageData` since the task is not cancelled.
-            
+
             guard let image = UIImage(data: imageData) else {
                 /// Converting the data to `UIImage` failed, return our fallback image.
                 return fallbackImage
             }
-            
+
             /// We completed the image download and heavy operations without cancellations, return the image.
             return image
         }
