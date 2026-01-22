@@ -1,3 +1,16 @@
+## January 2026
+
+- Fixed several layout issues with quotes.
+- Fixed layout issues with videos being presented with a too large height.
+- Fixed [Missed space after the Task #87](https://github.com/AvdLee/Swift-Concurrency-Course/issues/87) (Thanks, K. Portnov!)
+- Fixed [Incorrect source code path in the lesson "Migrating away from Functional Reactive Programming like RxSwift or Combine"](https://github.com/AvdLee/Swift-Concurrency-Course/issues/88) (Thanks, K. Portnov!)
+- Fixed [Greater Clarity over URLSession Task Cancellations](https://github.com/AvdLee/Swift-Concurrency-Course/issues/86) (Thanks, D. Norton)
+- Fixed several grammar mistakes (Thanks, R. Arguello!)
+- Fixed the layout for H4 headers for improved readability (Thanks, R. Arguello!)
+- Fixed [withThrowingTaskGroup example propagates errors and cancels tasks instead of filtering failures](https://github.com/AvdLee/Swift-Concurrency-Course/issues/89) (Thanks, D. Norton!)
+- Fixed [Performance Module - The Bad example is the same as the Good one](https://github.com/AvdLee/Swift-Concurrency-Course/issues/81) (Thanks, I. Mahmoud, O. Fridh!)
+- Fixed [Task Group Lesson - Clarifying Throwing vs. Non-Throwing Task Groups](https://github.com/AvdLee/Swift-Concurrency-Course/issues/79) (Thanks, M. La Gala!)
+
 ## November 2025
 
 ### New module: Performance

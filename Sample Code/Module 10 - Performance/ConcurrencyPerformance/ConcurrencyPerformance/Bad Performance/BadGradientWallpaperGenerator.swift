@@ -9,7 +9,7 @@ import CoreGraphics
 import Foundation
 
 /// Generates random "mesh gradient" style wallpapers as CGImage.
-nonisolated struct BadGradientWallpaperGenerator {
+struct BadGradientWallpaperGenerator {
     public let width: Int
     public let height: Int
     public let controlPointCount: Int
