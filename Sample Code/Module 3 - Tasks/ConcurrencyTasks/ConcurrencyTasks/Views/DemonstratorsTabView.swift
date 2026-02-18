@@ -15,6 +15,7 @@ struct DemonstratorsTabView: View {
     let taskGroupsDemonstrator = TaskGroupsDemonstrator()
     let taskTimeoutDemonstrator = TaskTimeoutDemonstrator()
     let discardingTaskGroupsDemonstrator = DiscardingTaskGroupsDemonstrator()
+    let limitingConcurrentTasksDemonstrator = LimitingConcurrentTasksDemonstrator()
     
     @State private var consoleLogsCapturer = ConsoleLogsCapturer()
 
@@ -79,6 +80,18 @@ struct DemonstratorsTabView: View {
                 Button("Discarding Task Group Demonstration") {
                     consoleLogsCapturer.clearLogs()
                     discardingTaskGroupsDemonstrator.demonstrate()
+                }
+                Button("Limited Concurrency Demonstration") {
+                    consoleLogsCapturer.clearLogs()
+                    Task {
+                        await limitingConcurrentTasksDemonstrator.demonstrateLimitedConcurrency()
+                    }
+                }
+                Button("Limited Concurrency With Results") {
+                    consoleLogsCapturer.clearLogs()
+                    Task {
+                        await limitingConcurrentTasksDemonstrator.demonstrateLimitedConcurrencyWithResults()
+                    }
                 }
             }
             Section("Console Output") {
