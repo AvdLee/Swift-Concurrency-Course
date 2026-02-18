@@ -1,3 +1,39 @@
+## February 2026
+
+### Tasks
+- **Added a new lesson:** Limiting the number of tasks running in a Task Group (advanced) ([Issue #8](https://github.com/AvdLee/Swift-Concurrency-Course/issues/8))
+- Fixed typo "onAppaer" to "onAppear" in code comment in lesson "Task Cancellation" ([Thanks, P. Krassay!](https://github.com/AvdLee/Swift-Concurrency-Course/issues/83))
+- Fixed grammar "Task did timeout" to "Task timed out" in lesson "Creating a Task timeout handler using a Task Group" ([Thanks, P. Krassay!](https://github.com/AvdLee/Swift-Concurrency-Course/issues/83))
+- Removed broken anchor link from "Failing a group when a child task throws" heading in lesson "Task Groups" ([Thanks, P. Krassay!](https://github.com/AvdLee/Swift-Concurrency-Course/issues/83))
+- Renamed misleading `name` parameter to `image` in `reduce` closure of task group code examples in lesson "Task Groups" (Thanks, P. Strindevall!)
+- Clarified misleading comment around `group.cancelAll()` in Task timeout custom initializer example in lesson "Creating a Task timeout handler using a Task Group" ([Thanks, BajaCali!](https://github.com/AvdLee/Swift-Concurrency-Course/issues/91))
+
+### Async/Await Basics
+- Removed redundant `try await` from `async let` declarations in code example in lesson "Calling async functions in parallel using async let" (Thanks, jlai!)
+
+### Sendable
+- Fixed typo "marketing" to "marking" and corrected "empty protocol" to "marker protocol" in lesson "Conforming your code to the Sendable protocol" ([Thanks, P. Krassay!](https://github.com/AvdLee/Swift-Concurrency-Course/issues/83))
+- Corrected "protocol inheritance" to "protocol conformance" when describing Sendable in lesson "Sendable and Reference Types" ([Thanks, P. Krassay!](https://github.com/AvdLee/Swift-Concurrency-Course/issues/83))
+- Softened actors-vs-locks recommendation and mentioned Mutex as alternative in lesson "Combining Sendable with custom Locks" ([Thanks, P. Krassay!](https://github.com/AvdLee/Swift-Concurrency-Course/issues/83))
+- Added caveat about value types containing reference-type properties in lesson "Sendable and Value Types" ([Thanks, P. Krassay!](https://github.com/AvdLee/Swift-Concurrency-Course/issues/83))
+- Added `nonisolated(nonsending)` forward reference in lesson "Explaining the concept of Sendable in Swift" ([Thanks, P. Krassay!](https://github.com/AvdLee/Swift-Concurrency-Course/issues/83))
+- Fixed typo "make not" to "make note" in lesson "Combining Sendable with custom Locks" (Thanks, A. Esplin!)
+
+### Actors
+- Balanced `assumeIsolated` stance to acknowledge legitimate use cases in lessons "When and how to use MainActor" and "Global Actor Isolated Conformances" ([Thanks, P. Krassay!](https://github.com/AvdLee/Swift-Concurrency-Course/issues/83))
+- Fixed premature "module complete" text to reference next lesson in lesson "Using a custom Actor Executor" ([Thanks, P. Krassay!](https://github.com/AvdLee/Swift-Concurrency-Course/issues/83))
+
+### AsyncStream & AsyncSequences
+- Capitalized "combine" to "Combine" when referring to the framework in lesson "Using AsyncStream and AsyncThrowingStream in your code" ([Thanks, P. Krassay!](https://github.com/AvdLee/Swift-Concurrency-Course/issues/83))
+- Clarified `AsyncSequence` vs `AsyncStream` relationship in lesson "Deciding between AsyncSequence, AsyncStream, or regular asynchronous methods" ([Thanks, P. Krassay!](https://github.com/AvdLee/Swift-Concurrency-Course/issues/83))
+- Mentioned Swift Async Algorithms `share()` operator for multi-consumer streams in lesson "Using AsyncStream and AsyncThrowingStream in your code" ([Thanks, P. Krassay!](https://github.com/AvdLee/Swift-Concurrency-Course/issues/83))
+
+### Migrating
+- Added `withCheckedContinuation` resume-once and deadlock warnings in lesson "Techniques for rewriting closures to async/await syntax" ([Thanks, P. Krassay!](https://github.com/AvdLee/Swift-Concurrency-Course/issues/83))
+- Added per-target `swiftLanguageMode` guidance for incremental Swift 6 migration in lesson "Steps to migrate existing code to Swift 6 and Strict Concurrency Checking" ([Thanks, P. Krassay!](https://github.com/AvdLee/Swift-Concurrency-Course/issues/83))
+- Noted `swift-tools-version: 6.2` defaults to Swift 6 mode and how to stay on Swift 5 in lesson "The Approachable Concurrency build setting" ([Thanks, P. Krassay!](https://github.com/AvdLee/Swift-Concurrency-Course/issues/83))
+- Added Swift 6.2 note to migration summary in lesson "Steps to migrate existing code to Swift 6 and Strict Concurrency Checking" ([Thanks, P. Krassay!](https://github.com/AvdLee/Swift-Concurrency-Course/issues/83))
+
 ## January 2026
 
 - Fixed several layout issues with quotes.
