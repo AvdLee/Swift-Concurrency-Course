@@ -16,7 +16,8 @@ struct DemonstratorsTabView: View {
     let taskTimeoutDemonstrator = TaskTimeoutDemonstrator()
     let discardingTaskGroupsDemonstrator = DiscardingTaskGroupsDemonstrator()
     let limitingConcurrentTasksDemonstrator = LimitingConcurrentTasksDemonstrator()
-    
+    let immediateTaskDemonstrator = ImmediateTaskDemonstrator()
+
     @State private var consoleLogsCapturer = ConsoleLogsCapturer()
 
     var body: some View {
@@ -92,6 +93,11 @@ struct DemonstratorsTabView: View {
                     Task {
                         await limitingConcurrentTasksDemonstrator.demonstrateLimitedConcurrencyWithResults()
                     }
+                }
+
+                Button("Immediate Tasks Demonstration") {
+                    consoleLogsCapturer.clearLogs()
+                    ImmediateTaskDemonstrator.demonstrate()
                 }
             }
             Section("Console Output") {
