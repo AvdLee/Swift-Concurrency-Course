@@ -1,3 +1,22 @@
+## October 2026
+
+### Introduction
+- **Updated a lesson:** Refreshed the outdated Swift 6.1 references and the "should I wait with migrating?" advice in lesson "The relationship of Swift 6 to Swift Concurrency"
+
+### Sendable
+- Removed the redundant `async` keyword from the actor method example in lesson "Using @Sendable with closures" ([Thanks, lucolivier!](https://github.com/AvdLee/Swift-Concurrency-Course/issues/102))
+- Added the direct `@Sendable` solution after the workaround in lesson "Using @Sendable with closures" ([Thanks, lucolivier!](https://github.com/AvdLee/Swift-Concurrency-Course/issues/103))
+
+### Actors
+- **Added a new lesson:** Using task executor preferences ([Issue #75](https://github.com/AvdLee/Swift-Concurrency-Course/issues/75))
+- Fixed the incorrect `DispatchQueueSerialExecutor` type name in the shared executor example and fixed several typos in lesson "Using a custom Actor Executor"
+
+### Threading
+- **Added a new lesson:** Debugging Swift Concurrency code ([Issue #68](https://github.com/AvdLee/Swift-Concurrency-Course/issues/68))
+
+### Migrating
+- **Updated a lesson:** Added a section about Swift 6.4's new `Continuation` type (SE-0528) in lesson "Techniques for rewriting closures to async/await syntax"
+
 ## February 2026
 
 ### Tasks
