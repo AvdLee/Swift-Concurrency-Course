@@ -45,14 +45,14 @@ final class ArticlesViewModel {
     }
 }
 
-/// Prints the isolation of the code calling this function.
-func logIsolation(isolation: isolated (any Actor)? = #isolation) {
-    print("Running with isolation: \(String(describing: isolation))")
-}
-
 @MainActor
 struct DebuggingDemonstrator {
     let viewModel = ArticlesViewModel()
+
+    /// Prints the isolation of the code calling this method.
+    func logIsolation(isolation: isolated (any Actor)? = #isolation) {
+        print("Running with isolation: \(String(describing: isolation))")
+    }
 
     /// Prints `Optional(Swift.MainActor)` for main actor code and `nil` for non-isolated code.
     func demonstrateIsolationLogging() async {
@@ -78,10 +78,9 @@ struct DebuggingDemonstrator {
             return
         }
 
-        let task = Task(name: "Refresh articles") {
+        Task(name: "Refresh articles") {
             print("Running task: \(Task.name ?? "Unnamed task")")
             // Prints: Running task: Refresh articles
         }
-        _ = task
     }
 }
