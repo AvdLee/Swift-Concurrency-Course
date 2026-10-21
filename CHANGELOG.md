@@ -13,6 +13,7 @@
 
 ### Threading
 - **Added a new lesson:** Debugging Swift Concurrency code ([Issue #68](https://github.com/AvdLee/Swift-Concurrency-Course/issues/68))
+- Added sample code to reproduce the crash, assertion, isolation logging, and task naming from the lesson "Debugging Swift Concurrency code" in `Sample Code/Module 7 - Threading`
 
 ### Migrating
 - **Updated a lesson:** Added a section about Swift 6.4's new `Continuation` type (SE-0528) in lesson "Techniques for rewriting closures to async/await syntax"

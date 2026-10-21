@@ -11,6 +11,7 @@ struct DemonstratorsTabView: View {
     let threadingDemonstrator = ThreadingDemonstrator()
     let newThreadingDemonstrator = NewThreadingDemonstrator()
     let actorReentrancyDemonstrator = ActorReentrancyDemonstrator()
+    let debuggingDemonstrator = DebuggingDemonstrator()
     
     @State private var consoleLogsCapturer = ConsoleLogsCapturer()
 
@@ -33,6 +34,28 @@ struct DemonstratorsTabView: View {
                 Button("Actor Reentrancy Demonstration") {
                     consoleLogsCapturer.clearLogs()
                     actorReentrancyDemonstrator.demonstrate()
+                }
+            }
+            Section(header: Text("Debugging Swift Concurrency code")) {
+                Button("Log isolation using #isolation") {
+                    consoleLogsCapturer.clearLogs()
+                    Task {
+                        await debuggingDemonstrator.demonstrateIsolationLogging()
+                    }
+                }
+                Button("Name a task") {
+                    consoleLogsCapturer.clearLogs()
+                    debuggingDemonstrator.demonstrateTaskNaming()
+                }
+                Button("Legacy callback: fixed") {
+                    consoleLogsCapturer.clearLogs()
+                    debuggingDemonstrator.viewModel.loadFixed()
+                }
+                Button("Legacy callback: assertion (stops the app)") {
+                    debuggingDemonstrator.viewModel.loadWithAssertion()
+                }
+                Button("Legacy callback: crash (stops the app)", role: .destructive) {
+                    debuggingDemonstrator.viewModel.loadCrashing()
                 }
             }
             Section("Console Output") {
