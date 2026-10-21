@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A1B2C3D42EA0000100000001 /* LegacyArticles in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D42EA0000100000002 /* LegacyArticles */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		8454F75A2DCA30D20056B2EB /* ConcurrencyThreading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConcurrencyThreading.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1B2C3D42EA0000100000001 /* LegacyArticles in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = ConcurrencyThreading;
 			packageProductDependencies = (
+				A1B2C3D42EA0000100000002 /* LegacyArticles */,
 			);
 			productName = ConcurrencyThreading;
 			productReference = 8454F75A2DCA30D20056B2EB /* ConcurrencyThreading.app */;
@@ -93,6 +99,9 @@
 				Base,
 			);
 			mainGroup = 8454F7512DCA30D20056B2EB;
+			packageReferences = (
+				A1B2C3D42EA0000100000003 /* XCLocalSwiftPackageReference "LegacyArticles" */,
+			);
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8454F75B2DCA30D20056B2EB /* Products */;
@@ -347,6 +356,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		A1B2C3D42EA0000100000003 /* XCLocalSwiftPackageReference "LegacyArticles" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = LegacyArticles;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A1B2C3D42EA0000100000002 /* LegacyArticles */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LegacyArticles;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8454F7522DCA30D20056B2EB /* Project object */;
 }
